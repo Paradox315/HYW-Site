@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}个人资料{% endblock %}
+{% block header_extends %}
+    <style>
+        .panel_bg {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            padding: 5%;
+            box-shadow: rgb(240,242,247) 0px 0px 10px inset;
+        }
+
+        span {
+            color: #f9f9f9;
+        }
+
+        label {
+            color: #f9f9f9;
+        }
+    </style>
+{% endblock %}
+{% block nav_home_active %}active{% endblock %}
+{% block content %}
+    <div class="containter">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="panel panel_bg">
+                    {% if user.is_authenticated %}
+                    <div class="panel-heading">
+                        <h2><span>{{ user.username }}</span></h2>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li class="list-group-item">昵称：{{ user.get_nickname }} <a
+                                    href="{% url 'change_nickname' %}?from={{ request.get_full_path }}">修改昵称</a></li>
+                            <li class="list-group-item">邮箱：{% if user.email %}{{ user.email }}{% else %}未绑定
+                                <a href="{% url 'bind_email' %}?from={{ request.get_full_path }}">绑定邮箱</a>{% endif %}
+                            </li>
+                            <li class="list-group-item">上一次登录的时间：{{ user.last_login|date:"Y-m-d H:i:s" }}</li>
+                            <li class="list-group-item"><a href="{% url 'change_password' %}">修改密码</a></li>
+                        </ul>
+                    </div>
+
+                {% else %}
+                    <span>未登录，跳转到首页...</span>
+                    <script type="text/javascript">
+                        window.location.href = '/';
+                    </script>
+                {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>    
+{% endblock %}

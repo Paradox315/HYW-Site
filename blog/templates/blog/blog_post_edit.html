@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}新建博客{% endblock %}
+{% block nav_article_active %}active{% endblock %}
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+    <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
+    <style>
+        .panel_bg {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            padding: 5%;
+            box-shadow: rgb(240,242,247) 0px 0px 10px inset;
+        }
+
+        span {
+            color: #f9f9f9;
+            font-weight: bold;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="panel panel_bg">
+                <div class="panel-heading">
+                    <h3><span>添加博客</span></h3>
+                </div>
+                <div class="panel-body">
+                    {% if user.is_authenticated %}
+                        <form method="POST" class="post-form">
+                            {% csrf_token %}
+                            <h3><span>文章标题</span></h3>
+                            <p>{{ form.title }}</p>
+                            <h4><span>文章类型</span> </h4>
+                            <p> {{ form.content_type }}</p>
+                            <a href="/add_type/" class="btn btn-success "><span class="glyphicon glyphicon-plus"></span></a>
+                            <h4><span>文章内容</span></h4>
+                            <p>{{ form.text }}</p>
+                            <button type="submit" class="save btn btn-default">提交</button>
+                        </form>
+                    {% else %}
+                        您尚未登录，登录之后方可添加文章~
+                        <a class="btn btn-primary" href="{% url 'login' %}?from={{ request.get_full_path }}">登录</a>
+                        <span> 或 </span>
+                        <a class="btn btn-danger" href="{% url 'register' %}?from={{ request.get_full_path }}">注册</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block script_extends %}
+    <script>
+     CKEDITOR.editorConfig = function (config) {
+            config.disallowedContent = 'img{width,height}';
+        };
+    </script>
+{% endblock %}

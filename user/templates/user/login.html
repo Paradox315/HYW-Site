@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block header_extends %}
+    <style>
+        .panel_bg {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            padding: 5%;
+            box-shadow: rgb(240,242,247) 0px 0px 10px inset;
+        }
+        span {
+            color: #f9f9f9;
+        }
+
+        label {
+            color: #f9f9f9;
+        }
+    </style>
+{% endblock %}
+{% block title %}我的网站|登录{% endblock %}
+{% block nav_home_active %}active{% endblock %}
+{% block content %}
+    <div class="containter">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                {% if not user.is_authenticated %}
+                    <div class="panel panel_bg">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span>登录</span></h3>
+                        </div>
+                        <div class="panel-body">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                {% for field in login_form %}
+                                    <label for="{{ field.id_for_label }}">{{ field.label }}</label><br>
+                                    {{ field }}
+                                    <p class="text-danger">{{ field.errors.as_text }}</p>
+                                {% endfor %}
+
+                                <span class="text-danger">{{ login_form.non_field_errors }}</span>
+                                <div class="clearfix"></div>
+                                <a href="{% url 'forgot_password' %}" class="pull-left"><span>忘记密码？</span></a>
+                                <input type="submit" value="登录" class="btn btn-primary pull-right">
+                            </form>
+                        </div>
+                    </div>
+                {% else %}
+                    <span>已登录，跳转到首页...</span>
+                    <script type="text/javascript">
+                        window.location.href = '/';
+                    </script>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script_extends %}
+    <script>
+        //刷新图片验证码
+        $(function () {
+            //刷新
+            $('.captcha').click(function () {
+                $.getJSON("/user/img_refresh/", function (result) {
+                    $('.captcha').attr('src', result['image_url']);
+                    $('#id_captcha_0').val(result['hashkey'])
+                });
+                return false;
+            });
+            //验证
+            $('#id_captcha_1').blur(function () {
+                console.log('用户输入的:' + $('#id_captcha_1').val());
+                // 获取输入框和隐藏字段id_captcha_0的数值
+                code = $('#id_captcha_1').val();
+                hashkey = $('#id_captcha_0').val();
+                $.getJSON('/user/img_check',
+                    {'code': code, 'hashkey': hashkey}, function (res) {
+                        //1 验证码正确,0验证码错误
+                        //alert('验证判断结果...:' + res)
+                        if (res.status) {
+                            $("#msg").html('验证码正确')
+                        } else {
+                            $("#msg").html('验证码错误')
+                        }
+                    })
+            })
+        })
+    </script>
+
+{% endblock %}
