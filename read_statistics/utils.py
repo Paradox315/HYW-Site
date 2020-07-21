@@ -1,3 +1,4 @@
+import calendar
 import datetime
 from django.contrib.contenttypes.models import ContentType
 from django.utils import timezone
@@ -44,3 +45,15 @@ def get_yesterday_hot_data(content_type):
     yesterday = today - datetime.timedelta(days=1)
     read_details = ReadDetail.objects.filter(content_type=content_type, date=yesterday).order_by('-read_num')
     return read_details[:7]
+def get_month_hot_data(content_type):
+    today = timezone.now().date()
+    monthday = calendar.monthrange(today.year,today.month)[1]
+    dates = []
+    read_nums = []
+    for i in range(monthday, 0, -1):
+        date = today - datetime.timedelta(days=i)
+        dates.append(date.strftime('%m/%d'))
+        read_details = ReadDetail.objects.filter(content_type=content_type, date=date)
+        result = read_details.aggregate(read_num_sum=Sum('read_num'))
+        read_nums.append(result['read_num_sum'] or 0)
+    return dates, read_nums

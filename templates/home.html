@@ -59,7 +59,7 @@
                     </div>
 
                     <ul>
-                        {% for hot_data in yesterday_hot_data %}
+                        {% for hot_data in hot_blogs_for_7_days %}
                             <li>
                                 <a class="list-group-item"
                                    href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}
@@ -76,7 +76,7 @@
                         <h3 class="panel-title">本周热门咨询</h3>
                     </div>
                     <ul>
-                        {% for hot_blog in hot_blogs_for_7_days %}
+                        {% for hot_blog in hot_blogs_for_month %}
                             <li>
                                 <a class="list-group-item"
                                    href="{% url 'blog_detail' hot_blog.id %}">{{ hot_blog.title }}
