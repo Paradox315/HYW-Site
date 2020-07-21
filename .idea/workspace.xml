@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="445618fa-02b3-4c82-bc84-57717da5bd4e" name="Default Changelist" comment="样式改变">
+    <list default="true" id="445618fa-02b3-4c82-bc84-57717da5bd4e" name="Default Changelist" comment="1.0">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e3c9274-aa26-45cf-bb50-7f65476fe57a.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment/migrations/0002_auto_20200523_2137.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/likes/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/likes/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/05/21/69988798_p0_master1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/05/21/idea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/05/bookcoffee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/06/saomiao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/10/4c8656144392ce5b450b13f6b25fb5d1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/10/70462946_p0_master1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/10/81268191_p0_master1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/10/lodikb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/12/55224727_p0_master1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/21/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/21/pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/upload/2020/06/22/a8014c086e061d9526e5edb67ef40ad163d9ca99.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/read_statistics/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_statistics/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,16 +49,16 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
@@ -57,6 +79,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="ProjectId" id="1cAu4B7DCT1p3BoqAO3xGUWKQJH" />
   <component name="PropertiesComponent">
@@ -76,15 +99,15 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Files\Python_file\Mysite\static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Files\Python_file\Mysite\static\img" />
       <recent name="E:\Files\Python_file\Mysite\static" />
       <recent name="E:\Files\Python_file\Mysite\static\prism" />
       <recent name="C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\Lib\site-packages\ckeditor\static\ckeditor\ckeditor\plugins" />
       <recent name="C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\Lib\site-packages\ckeditor_uploader" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Files\Python_file\Mysite\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -287,6 +310,10 @@
       <workItem from="1592726273195" duration="14921000" />
       <workItem from="1595218721162" duration="1343000" />
       <workItem from="1595228174499" duration="1784000" />
+      <workItem from="1595316796221" duration="145000" />
+      <workItem from="1595317098339" duration="571000" />
+      <workItem from="1595317744962" duration="49000" />
+      <workItem from="1595327034438" duration="2105000" />
     </task>
     <task id="LOCAL-00001" summary="样式改变">
       <created>1595224464600</created>
@@ -300,6 +327,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -190,6 +190,7 @@ CACHES = {
         'LOCATION': 'my_cache_table',
     }
 }
+
 EMAIL_USE_SSL = True
 EMAIL_HOST = 'smtp.qq.com'  # 如果是 163 改成 smtp.163.com
 EMAIL_PORT = 465

@@ -57,10 +57,11 @@
     button.navbar-toggle > span.icon-bar {
         background-color: #dedede
     }
-    .icon{
+
+    .icon {
         border-radius: 8px;
-        box-shadow:  20px 20px 60px #a8f8ed,
-             -20px -20px 60px #c0eada;
+        box-shadow: 20px 20px 60px #a8f8ed,
+        -20px -20px 60px #c0eada;
         width: auto;
         height: auto;
 
@@ -70,7 +71,7 @@
 <div class="navbar navbar-fixed-top my-navbar" role="navigation" style="background: #4cae4c">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'home' %}"style="font-size: large">
+            <a class="navbar-brand" href="{% url 'home' %}" style="font-size: large">
                 <div class="icon">
                     <img src="/static/img/icon.png" style="width: 30px;height: auto">
                     <span style="margin: 10px 10px;">HYW Site</span>
@@ -88,12 +89,12 @@
                     <a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> 首页</a>
                 </li>
                 <li class="{% block nav_blog_active %}{% endblock %}">
-                    <a href="{% url 'blog_list' %}"><span class="glyphicon glyphicon-list-alt"></span> 博客</a>
+                    <a href="{% url 'blog_list' %}"><span class="glyphicon glyphicon-list-alt"></span> 咨询</a>
                 </li>
                 {% if user.is_staff or user.is_superuser %}
-                <li class="{% block nav_article_active %}{% endblock %}">
-                    <a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span> 新建</a>
-                </li>
+                    <li class="{% block nav_article_active %}{% endblock %}">
+                        <a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span> 新建</a>
+                    </li>
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -188,5 +189,11 @@
 </script>
 {% block script_extends %}{% endblock %}
 </body>
-<footer><center><span style="color: #f9f9f9;font-weight: normal">Copyright © 2020 by HuYaowen. All rights reserved.</span></center></footer>
+
+<footer class="navbar-fixed-bottom" style="background: #d1d9d1;padding: 20px">
+    <div class="container" >
+        <center><span>Copyright © 2020 by HuYaowen. All rights reserved.</span></center>
+    </div>
+</footer>
+
 </html>

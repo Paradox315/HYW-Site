@@ -10,10 +10,12 @@
     <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
     <style>
         .panel_bg {
-            background: rgba(231,248,246, 0.85);
+            background: rgba(231, 248, 246, 0.85);
             border-radius: 25px;
             padding: 5%;
-            box-shadow: rgb(154,165,162) 0px 0px 10px inset;
+            background: #f9f9f9;
+            box-shadow:  20px 20px 15px #b6c6d0,
+             -10px -10px 15px #c8f5df;
         }
     </style>
 {% endblock %}
@@ -25,17 +27,18 @@
     <div class="row">
         <div class="col-xs-9 col-xs-offset-1">
             <div class="panel panel_bg">
-                <div class="panel-heading">
-                    <h3 style="margin-left: 1em">博客数据统计</h3>
-                </div>
-                <!-- 图表容器 DOM -->
-
-                <div id="container"></div>
-
-                <br>
-                <div class="panel panel-success" style="border: none">
+                {% if user.is_staff or user.is_superuser %}
                     <div class="panel-heading">
-                        <h3 class="panel-title">今天热门博客</h3>
+                        <h3 style="margin-left: 1em">网站浏览量统计</h3>
+                    </div>
+                    <!-- 图表容器 DOM -->
+                    <div id="container"></div>
+                    <br>
+                {% endif %}
+                <div class="panel panel-success" style="box-shadow:  5px 5px 9px #b6c6d0,
+             -5px -5px 9px #c8f5df;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">今日热门资讯</h3>
                     </div>
                     <ul>
                         {% for hot_data in today_hot_data %}
@@ -45,13 +48,14 @@
                                     ({{ hot_data.read_num }})</a>
                             </li>
                         {% empty %}
-                            <li class="list-group-item">今天暂时没有热门博客</li>
+                            <li class="list-group-item">今天暂时没有热门咨询</li>
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="panel panel-success" style="border: none">
-                    <div class="panel-heading" >
-                        <h3 class="panel-title" >昨天热门博客</h3>
+                <div class="panel panel-success" style="box-shadow:  5px 5px 9px #b6c6d0,
+             -5px -5px 9px #c8f5df;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">昨日热门咨询</h3>
                     </div>
 
                     <ul>
@@ -62,13 +66,14 @@
                                     ({{ hot_data.read_num }})</a>
                             </li>
                         {% empty %}
-                            <li class="list-group-item">昨天暂时没有热门博客</li>
+                            <li class="list-group-item">昨天暂时没有热门咨询</li>
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="panel panel-success" style="border: none">
-                    <div class="panel-heading" >
-                        <h3 class="panel-title" >7天热门博客</h3>
+                <div class="panel panel-success" style="box-shadow:  5px 5px 9px #b6c6d0,
+             -5px -5px 9px #c8f5df;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">本周热门咨询</h3>
                     </div>
                     <ul>
                         {% for hot_blog in hot_blogs_for_7_days %}
@@ -78,7 +83,7 @@
                                     ({{ hot_blog.read_num_sum }}) </a>
                             </li>
                         {% empty %}
-                            <li class="list-group-item">昨天暂时没有热门博客</li>
+                            <li class="list-group-item">本周没有热门咨询</li>
                         {% endfor %}
                     </ul>
                 </div>
