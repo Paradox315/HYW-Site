@@ -55,7 +55,7 @@
                 <div class="panel panel-success" style="box-shadow:  5px 5px 9px #b6c6d0,
              -5px -5px 9px #c8f5df;">
                     <div class="panel-heading">
-                        <h3 class="panel-title">昨日热门咨询</h3>
+                        <h3 class="panel-title">一周热门咨询</h3>
                     </div>
 
                     <ul>
@@ -66,14 +66,14 @@
                                     ({{ hot_data.read_num }})</a>
                             </li>
                         {% empty %}
-                            <li class="list-group-item">昨天暂时没有热门咨询</li>
+                            <li class="list-group-item">本周暂时没有热门咨询</li>
                         {% endfor %}
                     </ul>
                 </div>
                 <div class="panel panel-success" style="box-shadow:  5px 5px 9px #b6c6d0,
              -5px -5px 9px #c8f5df;">
                     <div class="panel-heading">
-                        <h3 class="panel-title">本周热门咨询</h3>
+                        <h3 class="panel-title">本月热门咨询</h3>
                     </div>
                     <ul>
                         {% for hot_blog in hot_blogs_for_month %}
@@ -83,7 +83,7 @@
                                     ({{ hot_blog.read_num_sum }}) </a>
                             </li>
                         {% empty %}
-                            <li class="list-group-item">本周没有热门咨询</li>
+                            <li class="list-group-item">本月暂时没有热门咨询</li>
                         {% endfor %}
                     </ul>
                 </div>

@@ -93,12 +93,3 @@ def post_new(request):
     else:
         form = ArticleForm()
     return render(request, 'blog/blog_post_edit.html', {'form': form})
-
-
-'''def add_type(request):
-    if request.method == 'POST':
-        new_type_name = request.POST.get('name')
-        # models.Book.objects.create(name=new_book_name, publisher_id=publisher_id)
-        models.BlogType.objects.create(type_name=new_type_name)
-        return redirect('/post_new/')
-    return render(request, 'blog/blog_post_edit.html')'''
