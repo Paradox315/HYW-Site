@@ -24,8 +24,9 @@
 
     /*非常重要的样式让背景图片100%适应整个屏幕*/
     .my-navbar {
-        padding: 20px 0;
+        padding: 25px 0;
         transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+        box-shadow:0px 15px 30px #9ea8b7;
     }
 
     .my-navbar a {
@@ -45,8 +46,7 @@
 
     /*-webkit-transition ;-moz-transition*/
     .top-nav {
-        padding: 0;
-        background: #000;
+        padding: 5px;
     }
 
     button.navbar-toggle {
@@ -65,6 +65,13 @@
         width: auto;
         height: auto;
 
+    }
+
+    /* 动态为footer添加类fixed-bottom */
+    .fixed-bottom {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 </style>
 <body>
@@ -113,13 +120,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             {% if user.has_nickname %}
-                                {{ user.username }}({{ user.get_nickname }})
+                                <span style="font-size: medium">{{ user.username }}({{ user.get_nickname }})</span>
                             {% else %}
-                                {{ user.username }}
+                                <span style="font-size: medium">{{ user.username }}</span>
                             {% endif %}
                             <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" style="background: #010101">
+                        <ul class="dropdown-menu" style="background: #1d971d">
                             <li class="dropdown-toggle"><a href="{% url 'user_info' %}">个人资料</a></li>
                             <li><a href="{% url 'change_password' %}">修改密码</a></li>
                             {% if user.is_staff or user.is_superuser %}
@@ -161,8 +168,28 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="test-clear.js" opacity=0.6></script>
+
+<footer style="background: #e0e1e5;padding: 20px">
+    <center><span>Copyright © 2020 by HuYaowen. All rights reserved.</span></center>
+</footer>
+</body>
 <script type="text/javascript">
+    $(function () {
+        function footerPosition() {
+            $("footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if (!(contentHeight > winHeight)) {
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("footer").addClass("fixed-bottom");
+            } else {
+                $("footer").removeClass("fixed-bottom");
+            }
+        }
+
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
     $(window).scroll(function () {
         if ($(".navbar").offset().top > 50) {
             $(".navbar-fixed-top").addClass("top-nav");
@@ -187,13 +214,6 @@
         });
     });
 </script>
-{% block script_extends %}{% endblock %}
-</body>
 
-<footer class="navbar-fixed-bottom" style="background: #d1d9d1;padding: 20px">
-    <div class="container" >
-        <center><span>Copyright © 2020 by HuYaowen. All rights reserved.</span></center>
-    </div>
-</footer>
 
 </html>

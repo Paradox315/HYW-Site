@@ -14,16 +14,23 @@
     <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
     <style>
         .panel_bg {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(231, 248, 246, 0.85);
             border-radius: 25px;
-            padding: 5%;
-            box-shadow: rgb(240,242,247) 0px 0px 10px inset;
+            margin-bottom: 60px;
+            margin-top: 20px;
+            background: #f9f9f9;
+            box-shadow:  20px 20px 15px #b6c6d0,
+             -10px -10px 15px #c8f5df;
+            border:none;
         }
-
-        span {
-            color: #f9f9f9;
-            font-weight: bold;
-        }
+    .panel-body{
+        padding: 5%;
+    }
+    .panel-heading{
+        border-radius: 25px 25px 0px 0px;
+        padding: 10px 30px;
+        background: #4cae4c;
+    }
     </style>
 {% endblock %}
 
@@ -33,7 +40,11 @@
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
                 <div class="panel panel_bg">
-                    <div class="panel-heading">{% block blog_list_title %}<span>博客列表</span>{% endblock %}</div>
+                    <div class="panel-heading">
+                    {% block blog_list_title %}
+                        <h3 style="color: #f9f9f9;font-weight: bold">博客列表</h3>
+                    {% endblock %}
+                    </div>
                     <div class="panel-body">
                         {% for blog in blogs %}
                             <div class="blog">
@@ -49,7 +60,7 @@
                             </div>
                         {% empty %}
                             <div class="blog">
-                                <h3>暂无博客，敬请期待</h3>
+                                <h4>暂无博客，敬请期待</h4>
                             </div>
                         {% endfor %}
                     </div>
@@ -60,10 +71,10 @@
                         <li >
                             {% if page_of_blogs.has_previous %}
                                 <a href="?page={{ page_of_blogs.previous_page_number }}" aria-label="Previous" style="background: rgba(36, 36, 36, 0.5)">
-                                    <span aria-hidden="true" style="background: rgba(36, 36, 36, 0.5)">&laquo;</span>
+                                    <span aria-hidden="true" >&laquo;</span>
                                 </a>
                             {% else %}
-                                <span aria-hidden="true" style="background: rgba(36, 36, 36, 0.5)">&laquo;</span>
+                                <span aria-hidden="true" >&laquo;</span>
                             {% endif %}
                         </li>
                         {# 全部页码 #}
@@ -74,7 +85,7 @@
                                 {% if page_num == '...' %}
                                     <li><span>{{ page_num }}</span></li>
                                 {% else %}
-                                    <li><a href="?page={{ page_num }}" style="background: rgba(36, 36, 36, 0.5)">{{ page_num }}</a></li>
+                                    <li><a href="?page={{ page_num }}" >{{ page_num }}</a></li>
                                 {% endif %}
                             {% endif %}
                         {% endfor %}
@@ -85,7 +96,7 @@
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             {% else %}
-                                <span aria-hidden="true" style="background: rgba(36, 36, 36, 0.5)">&raquo;</span>
+                                <span aria-hidden="true" >&raquo;</span>
                             {% endif %}
                         </li>
                     </ul>
@@ -97,7 +108,7 @@
             </div>
             <div class="hidden-xs col-sm-4 col-md-3 col-lg-2">
                 <div class="panel panel_bg">
-                    <div class="panel-heading"><span>博客分类</span></div>
+                    <div class="panel-heading"><h3 style="color: #f9f9f9;font-weight: bold">咨询分类</h3></div>
                     <div class="panel-body">
                         <ul class="blog-types">
                             {% for blog_type in blog_types %}
@@ -107,13 +118,13 @@
                                     </a>
                                 </li>
                             {% empty %}
-                                <li><span>暂无分类</span></li>
+                                <li class="list-group-item"><span>暂无分类</span></li>
                             {% endfor %}
                         </ul>
                     </div>
                 </div>
                 <div class="panel panel_bg">
-                    <div class="panel-heading"><span>日期归档</span></div>
+                    <div class="panel-heading"><h3 style="color: #f9f9f9;font-weight: bold">日期归档</h3></div>
                     <div class="panel-body">
                         <ul>
                             {% for blog_date, blog_count in blog_dates.items %}
@@ -122,6 +133,8 @@
                                         {{ blog_date|date:"Y年m月" }} ({{ blog_count }})
                                     </a>                                    
                                 </li>
+                            {% empty %}
+                                <li class="list-group-item"><span>暂无咨询</span></li>
                             {% endfor %}
                         </ul>
                     </div>

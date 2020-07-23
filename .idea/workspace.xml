@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="445618fa-02b3-4c82-bc84-57717da5bd4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/default/cover.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/add_blog_type.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/add_blog_type.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_post_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_post_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -296,7 +299,8 @@
       <workItem from="1595317744962" duration="49000" />
       <workItem from="1595327034438" duration="2262000" />
       <workItem from="1595329678879" duration="2282000" />
-      <workItem from="1595425486005" duration="1679000" />
+      <workItem from="1595425486005" duration="1813000" />
+      <workItem from="1595498583191" duration="5712000" />
     </task>
     <task id="LOCAL-00001" summary="样式改变">
       <created>1595224464600</created>
@@ -319,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595331958917</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1.0.1测试版，新增了添加文章封面功能">
+      <created>1595427277838</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595427277838</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +363,8 @@
     <MESSAGE value="样式改变" />
     <MESSAGE value="1.0" />
     <MESSAGE value="1.0测试版，更改了首页数据显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0测试版，更改了首页数据显示" />
+    <MESSAGE value="1.0.1测试版，新增了添加文章封面功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.1测试版，新增了添加文章封面功能" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Mysite$Test__blog.coverage" NAME="Test: blog Coverage Results" MODIFIED="1592746519844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
