@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'imagekit', # 注册 imagekit
     'ckeditor_uploader',
     'captcha',
     'blog',

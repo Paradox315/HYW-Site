@@ -6,13 +6,16 @@ from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 
 # Create your models here.
+from imagekit.models import ImageSpecField
+from pilkit.processors import ResizeToFill
+
 from read_statistics.models import ReadNumExpandMethod, ReadDetail
 
 
 def user_directory_path(instance, filename):
     ext = filename.split('.').pop()
-    filename = '{0}{1}.{2}'.format(instance.author, instance.title, ext)
-    return os.path.join(instance.blog_type.author, filename)  # 系统路径分隔符差异，增强代码重用性
+    filename = '{0}_{1}.{2}'.format(instance.author, instance.title, ext)
+    return os.path.join(str(instance.blog_type.type_name), filename)  # 系统路径分隔符差异，增强代码重用性
 
 
 class BlogType(models.Model):
@@ -25,6 +28,12 @@ class BlogType(models.Model):
 class Blog(models.Model, ReadNumExpandMethod):
     title = models.CharField(max_length=50)
     blog_img = models.ImageField(blank=True, null=True, upload_to=user_directory_path)
+    blog_cover =ImageSpecField( # 注意：ImageSpecField 不会生成数据库表的字段
+        source = 'blog_img',
+        processors = [ResizeToFill(300, 200)],  # 处理成一寸照片的大小
+        format = 'JPEG',  # 处理后的图片格式
+        options = {'quality': 85}  # 处理后的图片质量
+    )
     blog_type = models.ForeignKey(BlogType, on_delete=models.DO_NOTHING)
     content = RichTextUploadingField()
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
@@ -42,5 +51,10 @@ class Blog(models.Model, ReadNumExpandMethod):
         else:
             return '/media/default/cover.jpg'
 
+    def photo_cover_url(self):
+        if self.blog_cover and hasattr(self.blog_cover, 'url'):
+            return self.blog_cover.url
+        else:
+            return '/media/default/user.jpg'
     class Meta:
         ordering = ['-created_time']

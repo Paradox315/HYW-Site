@@ -81,13 +81,14 @@ def blog_detail(request, blog_pk):
 
 def post_new(request):
     if request.method == "POST":
-        form = ArticleForm(request.POST)
+        form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
             blog = Blog()
             blog.author = request.user
             blog.blog_type = form.cleaned_data['content_type']
             blog.title = form.cleaned_data['title']
             blog.content = form.cleaned_data['text']
+            blog.blog_img = request.FILES.get('cover')
             blog.save()
         return redirect('home')
     else:

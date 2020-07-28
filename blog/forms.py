@@ -10,7 +10,8 @@ class ArticleForm(forms.Form):
                                           widget=forms.Select(attrs={'class': 'form-control'}))
     text = forms.CharField(label="文章内容", widget=CKEditorUploadingWidget(config_name='default'),
                            error_messages={'required': '博客内容不能为空'})
+    cover = forms.ImageField(label="封面")
 
     class Meta:
         model = Blog
-        fields = ('title', 'text', 'content_type')
+        fields = ('title', 'text', 'content_type', 'cover')

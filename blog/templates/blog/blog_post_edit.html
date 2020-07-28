@@ -29,10 +29,12 @@
                 <div class="panel-heading">
                     <h3><span>添加博客</span></h3>
                 </div>
+                <hr>
                 <div class="panel-body">
                     {% if user.is_authenticated %}
-                        <form method="POST" class="post-form">
+                        <form method="POST" class="post-form" enctype="multipart/form-data">
                             {% csrf_token %}
+                            {{ form.cover }}
                             <h3><span>文章标题</span></h3>
                             <p>{{ form.title }}</p>
                             <h4><span>文章类型</span> </h4>
