@@ -13,22 +13,22 @@
     <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
     <style>
-        #comment_list p{
+        #comment_list p {
             color: #222222;
         }
-        #comment_list img{
+
+        #comment_list img {
             width: auto;
             height: auto;
             display: block;
         }
-        p {
-            color: #f9f9f9;
-        }
+
         p img {
             width: 80%;
             height: auto;
             display: block;
         }
+
         .panel_bg {
             background: rgba(231, 248, 246, 0.85);
             border-radius: 25px;
@@ -36,8 +36,8 @@
             margin-top: 20px;
             padding: 5%;
             background: #f9f9f9;
-            box-shadow:  20px 20px 15px #b6c6d0,
-             -10px -10px 15px #c8f5df;
+            box-shadow: 20px 20px 15px #b6c6d0,
+            -10px -10px 15px #c8f5df;
         }
 
     </style>
@@ -55,7 +55,9 @@
                     <div class="panel-body">
                         <ul class="blog-info-description">
                             <li><span>作者：{{ blog.author }}</span></li>
-                            <li><span>分类：<a href="{% url 'blogs_with_type' blog.blog_type.pk %}">{{ blog.blog_type }}</a></span></li>
+                            <li><span>分类：<a
+                                    href="{% url 'blogs_with_type' blog.blog_type.pk %}">{{ blog.blog_type }}</a></span>
+                            </li>
                             <li><span>发表日期：{{ blog.created_time|date:"Y-m-d H:i:s" }}</span></li>
                             <li><span>阅读({{ blog.get_read_num }})</span></li>
                             <li><span>评论({% get_comment_count blog %})</span></li>
@@ -165,7 +167,7 @@
                                     {% endfor %}
                                 </div>
                             {% empty %}
-                                <span id="no_comment" >暂无评论</span>
+                                <span id="no_comment">暂无评论</span>
                             {% endfor %}
                         </div>
                     </div>
@@ -202,9 +204,6 @@
             </div>
         </div>
     </div>
-{% endblock %}
-
-{% block script_extends %}
     <script type="text/javascript">
         String.prototype.format = function () {
             var str = this;
@@ -366,12 +365,9 @@
                 }
             });
         });
-
-         CKEDITOR.editorConfig = function (config) {
+        CKEDITOR.editorConfig = function (config) {
             config.disallowedContent = 'img{width,height}';
 
         };
-
-
     </script>
 {% endblock %}
