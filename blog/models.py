@@ -55,6 +55,6 @@ class Blog(models.Model, ReadNumExpandMethod):
         if self.blog_cover and hasattr(self.blog_cover, 'url'):
             return self.blog_cover.url
         else:
-            return '/media/default/user.jpg'
+            return '/media/default/cover.jpg'
     class Meta:
         ordering = ['-created_time']

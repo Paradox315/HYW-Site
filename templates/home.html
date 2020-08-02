@@ -16,8 +16,8 @@
             margin-bottom: 60px;
             margin-top: 20px;
             background: #f9f9f9;
-            box-shadow:  20px 20px 15px #b6c6d0,
-             -10px -10px 15px #c8f5df;
+            box-shadow: 20px 20px 15px #b6c6d0,
+            -10px -10px 15px #c8f5df;
         }
     </style>
 {% endblock %}
@@ -25,7 +25,6 @@
 {% block nav_home_active %}active{% endblock %}
 
 {% block content %}
-
     <div class="row">
         <div class="col-xs-9 col-xs-offset-1">
             <div class="panel panel_bg">
@@ -59,13 +58,12 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">一周热门咨询</h3>
                     </div>
-
                     <ul>
-                        {% for hot_data in hot_blogs_for_7_days %}
+                        {% for hot_blog in hot_blogs_for_7_days %}
                             <li>
                                 <a class="list-group-item"
-                                   href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}
-                                    ({{ hot_data.read_num }})</a>
+                                   href="{% url 'blog_detail' hot_blog.id %}">{{ hot_blog.title }}
+                                    ({{ hot_blog.read_num_sum }}) </a>
                             </li>
                         {% empty %}
                             <li class="list-group-item">本周暂时没有热门咨询</li>
@@ -92,8 +90,6 @@
             </div>
         </div>
     </div>
-
-
     <script>
         // 图表配置
         var options = {

@@ -12,6 +12,7 @@
     <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
     <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
+
     <style>
         .panel_bg {
             background: rgba(231, 248, 246, 0.85);
@@ -36,7 +37,6 @@
 
         .excerpt {
             transition: all .15s ease-in-out;
-            background-color: #FFF;
             padding: 20px 15px 20px 20px;
             margin-bottom: 10px;
             position: relative;
@@ -44,18 +44,40 @@
             clear: both;
         }
 
-        .excerpt p.auth-span {
-            float: right;
+        .tit {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #222222;
+            letter-spacing: 8px;
+        }
+        .tit:hover{
+            color: #000000;
+            font-weight: 1000;
+        }
+        .excerpt .note {
+            color: #777;
+            line-height: 24px;
+            font-weight: 100;
+            font-size: medium;
+            margin-bottom: 60px;
+            word-break: break-all;
+        }
+
+        .excerpt .tag {
             position: absolute;
             bottom: 0;
             right: 0;
+            padding: 20px 15px 20px 20px;
         }
-    .excerpt .note {
-    color: #777;
-    line-height: 24px;
-    margin-bottom: 0;
-    font-weight: 100;
-}
+
+        #cover {
+            transition: all 2s;
+        }
+
+        #cover:hover {
+            transform: scale(1.05);
+        }
     </style>
 {% endblock %}
 
@@ -67,29 +89,40 @@
                 <div class="panel panel_bg">
                     <div class="panel-heading">
                         {% block blog_list_title %}
-                            <h3 style="color: #f9f9f9;font-weight: bold">博客列表</h3>
+                            <h3 style="color: #f9f9f9;font-weight: bold"><span
+                                    class="glyphicon glyphicon-th-list"></span> 博客列表</h3>
                         {% endblock %}
                     </div>
                     <div class="panel-body">
                         {% for blog in blogs %}
-                            <div class="media panel_bg excerpt">
-                                <h2><a class="list-group-item media-heading" href="{% url 'blog_detail' blog.pk %}"
-                                       target="_blank">{{ blog.title }}</a></h2>
-                                <a class="media-left" href="{% url 'blog_detail' blog.pk %}">
-                                    <img src="{{ blog.photo_cover_url }}" alt="封面">
-                                </a>
-                                <div class="media-body excerpt">
+                            <div class="panel_bg excerpt">
+                                <h2 ><a class="list-group-item media-heading tit"
+                                        href="{% url 'blog_detail' blog.pk %}"
+                                        target="_blank">{{ blog.title }}</a>
+                                </h2>
+                                <div class="clearfix">
+                                    <a href="{% url 'blog_detail' blog.pk %}">
+                                        <img class="pull-left img-fluid img-thumbnail" id="cover"
+                                             style="width: 40%;margin-bottom: 60px"
+                                             src="{{ blog.photo_cover_url }}" alt="封面">
+                                    </a>
+                                    <div style="float:right;width: 58%">
+                                        <p class="note">{{ blog.content|safe|striptags|truncatechars:200 }}</p>
+                                        <p class="tag">
+                                            <span class="glyphicon glyphicon-tag"></span>
+                                            <a href="{% url 'blogs_with_type' blog.blog_type.pk %}">{{ blog.blog_type }}</a>&nbsp;&nbsp;
+                                            <span class="glyphicon glyphicon-time"></span> {{ blog.created_time|date:"Y-m-d" }}&nbsp;&nbsp;
+                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                            阅读({{ blog.get_read_num }})&nbsp;&nbsp;
+                                            <span class="glyphicon glyphicon-comment"></span>
+                                            评论({% get_comment_count blog %})&nbsp;&nbsp;
+                                            <span class="glyphicon glyphicon-heart" style="color: #FF2F25"></span><span
+                                                style="color: #FF2F25"> {% get_like_count blog %}个赞</span>
+                                        </p>
+                                    </div>
 
-                                    <p class="note">{{ blog.content|safe|striptags|truncatechars:200 }}</p>
-                                    <p class="auth-span">
-                                        <span class="glyphicon glyphicon-tag"></span> <a
-                                            href="{% url 'blogs_with_type' blog.blog_type.pk %}">{{ blog.blog_type }}</a>&nbsp;&nbsp;
-                                        <span class="glyphicon glyphicon-time"></span> {{ blog.created_time|date:"Y-m-d" }}&nbsp;&nbsp;
-                                        阅读({{ blog.get_read_num }})&nbsp;&nbsp;
-                                        评论({% get_comment_count blog %})&nbsp;&nbsp;
-                                        点赞({% get_like_count blog %})
-                                    </p>
                                 </div>
+
                             </div>
                         {% empty %}
                             <div class="blog">
