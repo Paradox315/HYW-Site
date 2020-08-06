@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="445618fa-02b3-4c82-bc84-57717da5bd4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user/simple_avatar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/static/blog/blog.css" beforeDir="false" afterPath="$PROJECT_DIR$/blog/static/blog/blog.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blogs_with_date.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blogs_with_date.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blogs_with_type.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blogs_with_type.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comment/templatetags/comment_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment/templatetags/comment_tags.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -337,7 +332,7 @@
       <workItem from="1596637374348" duration="2528000" />
       <workItem from="1596641895152" duration="226000" />
       <workItem from="1596679594603" duration="589000" />
-      <workItem from="1596706482604" duration="1173000" />
+      <workItem from="1596706482604" duration="5464000" />
     </task>
     <task id="LOCAL-00001" summary="样式改变">
       <created>1595224464600</created>
@@ -388,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596382011874</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1.0.3测试版，自动头像测试">
+      <created>1596707678351</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596707678351</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +428,8 @@
     <MESSAGE value="1.0.2测试版，新增了上传文件功能" />
     <MESSAGE value="1.0.2测试版，新增了图文显示功能" />
     <MESSAGE value="1.0.2测试版，美化了图文显示功能，修复了日期bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.2测试版，美化了图文显示功能，修复了日期bug" />
+    <MESSAGE value="1.0.3测试版，自动头像测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.3测试版，自动头像测试" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Mysite$Test__blog.coverage" NAME="Test: blog Coverage Results" MODIFIED="1592746519844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
