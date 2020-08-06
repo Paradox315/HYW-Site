@@ -8,6 +8,8 @@
 
 {% block header_extends %}
     <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1984124_0hs351uwynqk.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1984143_asflykq9gq6.css">
     <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
     <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
     <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
@@ -40,6 +42,76 @@
             -10px -10px 15px #c8f5df;
         }
 
+        .tit {
+            font-weight: 700;
+            letter-spacing: 8px;
+            transition: all 2s;
+            color: #222222;
+            text-shadow: 3px 3px 5px #ced0d6;
+        }
+
+        .info {
+            color: #a4a4a6;
+        }
+
+        a {
+            color: #5e5e5e;
+        }
+
+        a:hover {
+            text-decoration: none;
+            opacity: .8;
+            color: #5e5e5e;
+        }
+
+        .like:hover {
+            color: #f84056;
+            font-weight: 500;
+            text-shadow: 3px 3px 5px #ced0d6;
+            transition: all 2s;
+            background: #fcebed;
+            opacity: .8;
+            border: 1px solid #f0f6f8;
+            border-radius: 5px;
+            padding: 8px 20px 8px 20px;
+            box-shadow: inset 0px 0px 5px 1px #a5a7a8;
+        }
+
+        .liked {
+            color: #f84056;
+            font-weight: 600;
+            text-shadow: 3px 3px 5px #ced0d6;
+        }
+
+        .mask {
+            overflow: hidden;
+            height: 20px;
+        }
+
+        .mask:after {
+            content: '';
+            display: block;
+            margin: -25px auto 0;
+            width: 100%;
+            height: 25px;
+            border-radius: 125px/12px;
+            box-shadow: 0 0 8px #aaadac;
+        }
+
+        .previous-next-links {
+            line-height: 24px;
+            overflow: hidden;
+            padding: 10px 30px 10px 30px;
+            background: #fbfbfb;
+            border-top: 1px solid #efefef;
+            border-bottom: 1px solid #efefef;
+            color: #8590a6;
+            font-size: 15px;
+            border-radius: 25px;
+            border: 1px solid #e7eaf1;
+            box-shadow: inset 0 0 7px 1px #b6c6d0;
+            box-sizing: border-box;
+        }
     </style>
 {% endblock %}
 
@@ -50,45 +122,60 @@
             <div class="col-xs-10 col-xs-offset-1">
                 <div class="panel panel_bg">
                     <div class="panel-heading">
-                        <h3><span>{{ blog.title }}</span></h3>
+                        <h1 class="tit"><span>{{ blog.title }}</span></h1>
                     </div>
+
                     <div class="panel-body">
                         <ul class="blog-info-description">
-                            <li><span>作者：{{ blog.author }}</span></li>
-                            <li><span>分类：<a
+                            <li><span class="info"><span class="glyphicon glyphicon-tag"></span> ：
+                                 <a class="label label-success" style="font-size: 13px"
                                     href="{% url 'blogs_with_type' blog.blog_type.pk %}">{{ blog.blog_type }}</a></span>
                             </li>
-                            <li><span>发表日期：{{ blog.created_time|date:"Y-m-d H:i:s" }}</span></li>
-                            <li><span>阅读({{ blog.get_read_num }})</span></li>
-                            <li><span>评论({% get_comment_count blog %})</span></li>
+                            <li><span class="info"><span
+                                    class="glyphicon glyphicon-user"></span> {{ blog.author }}</span></li>
+
+                            <li><span class="info"><span
+                                    class="iconfont icon-shizhong"></span> {{ blog.created_time|date:"Y-m-d H:i:s" }}</span>
+                            </li>
+                            <li><span class="info"> <span
+                                    class="glyphicon glyphicon-eye-open"></span> {{ blog.get_read_num }}</span></li>
+                            <li><span class="info"> <span
+                                    class="glyphicon glyphicon-comment"></span> {% get_comment_count blog %}</span></li>
+
+
                         </ul>
-                        <div class="blog-content" style="width: auto;text-indent: 1px">
+                        <div class="mask"></div>
+                        <div class="blog-content"
+                             style="width: auto;text-indent: 1.5em;word-break: break-all;font-size: 1.2vw">
                             {{ blog.content|safe }}
+                        </div>
+                        <div class="like pull-right"
+                             onclick="likeChange(this, '{% get_content_type blog %}', {{ blog.pk }})">
+                            <span class="iconfont icon-dianzan {% get_like_status blog %}"
+                                  style="font-size: x-large"></span>
+                            <span class="liked-num" style="font-size: x-large">{% get_like_count blog %}</span>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="like" onclick="likeChange(this, '{% get_content_type blog %}', {{ blog.pk }})">
-                    <span class="glyphicon glyphicon-thumbs-up {% get_like_status blog %}"></span>
-                    <span class="liked-num">{% get_like_count blog %}</span>
-                    <span>喜欢</span>
-                </div>
-                <div class="blog-more">
-                    <p><span>上一篇：</span>
+
+                <div class="previous-next-links">
+                    <div class="pull-left"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;
                         {% if previous_blog %}
                             <a href="{% url 'blog_detail' previous_blog.pk %}">{{ previous_blog.title }}</a>
                         {% else %}
                             <span>没有了</span>
                         {% endif %}
-                    </p>
-                    <p><span>下一篇：</span>
+                    </div>
+                    <div class="pull-right">
                         {% if next_blog %}
                             <span><a href="{% url 'blog_detail' next_blog.pk %}">{{ next_blog.title }}</a></span>
                         {% else %}
                             <span>没有了</span>
                         {% endif %}
-                    </p>
+                        &nbsp;<span class="glyphicon glyphicon-arrow-right"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,7 +183,7 @@
             <div class="col-xs-10 col-xs-offset-1">
                 <div class="panel panel_bg">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><span>提交评论</span></h3>
+                        <h3>提交评论</h3>
                     </div>
                     <div class="panel-body">
                         {% if user.is_authenticated %}
@@ -105,7 +192,7 @@
                                 <label><span>{{ user.username }}，欢迎评论~</span></label>
                                 <br/>
                                 <div id="reply_content_container" style="display:none;">
-                                    <p id="reply_title"><SPAN>回复：</SPAN></p>
+                                    <p id="reply_title"><span>回复：</span></p>
                                     <div id="reply_content"></div>
                                 </div>
                                 {% csrf_token %}
@@ -129,20 +216,21 @@
 
                 </div>
                 <div class="panel panel_bg">
-                    <div class="panel-heading"><h3 class="comment-area-title"><span>评论列表</span></h3></div>
+                    <div class="panel-heading"><h3>评论列表</h3></div>
                     <div class="panel-body">
                         <div id="comment_list">
                             {% get_comment_list blog as comments %}
                             {% for comment in comments %}
                                 <div id="root_{{ comment.pk }}" class="list-group-item">
-                                    <span class="font_color">{{ comment.user.username }}</span>
+
+                                    <span id='id_username' class="font_color">{{ comment.user.username }}</span>
                                     <span class="font_color">({{ comment.comment_time|date:"Y-m-d H:i:s" }})：</span>
                                     <div id="comment_{{ comment.pk }}">
                                         {{ comment.text|safe }}
                                     </div>
                                     <div class="like"
                                          onclick="likeChange(this, '{% get_content_type comment %}', {{ comment.pk }})">
-                                        <span class="glyphicon glyphicon-thumbs-up {% get_like_status comment %} font_color"></span>
+                                        <span class="iconfont icon-dianzan {% get_like_status comment %} font_color"></span>
                                         <span class="liked-num font_color">{% get_like_count comment %}</span>
                                     </div>
                                     <a href="javascript:reply({{ comment.pk }});">回复</a>
@@ -159,7 +247,7 @@
                                             </div>
                                             <div class="like"
                                                  onclick="likeChange(this, '{% get_content_type reply %}', {{ reply.pk }})">
-                                                <span class="glyphicon glyphicon-thumbs-up {% get_like_status reply %} font_color"></span>
+                                                <span class="iconfont icon-dianzan {% get_like_status reply %} font_color"></span>
                                                 <span class="liked-num font_color">{% get_like_count reply %}</span>
                                             </div>
                                             <a href="javascript:reply({{ reply.pk }});">回复</a>
@@ -205,6 +293,7 @@
         </div>
     </div>
     <script type="text/javascript">
+
         String.prototype.format = function () {
             var str = this;
             for (var i = 0; i < arguments.length; i++) {
@@ -268,7 +357,7 @@
                                 '<span>({2})：</span>' +
                                 '<div id="comment_{0}">{3}</div>' +
                                 '<div class="like" onclick="likeChange(this, \'{4}\', {0})">' +
-                                '<span class="glyphicon glyphicon-thumbs-up"></span> ' +
+                                '<span class="iconfont icon-dianzan"></span> ' +
                                 '<span class="liked-num">0</span>' +
                                 '</div>' +
                                 '<a href="javascript:reply({0});">回复</a>' +
@@ -284,7 +373,7 @@
                                 '<span>{3}：</span>' +
                                 '<div id="comment_{0}">{4}</div>' +
                                 '<div class="like" onclick="likeChange(this, \'{5}\', {0})">' +
-                                '<span class="glyphicon glyphicon-thumbs-up\"></span> ' +
+                                '<span class="iconfont icon-dianzan\"></span> ' +
                                 '<span class="liked-num">0</span>' +
                                 '</div>' +
                                 '<a href="javascript:reply({0});">回复</a>' +
@@ -323,18 +412,26 @@
                 },
                 cache: false,
                 success: function (data) {
-                    console.log(data)
+                    console.log(data);
                     if (data['status'] == 'SUCCESS') {
                         // 更新点赞状态
-                        var element = $(obj.getElementsByClassName('glyphicon glyphicon-thumbs-up'));
+                        var element = $(obj.getElementsByClassName('iconfont icon-dianzan'));
                         if (is_like) {
                             element.addClass('active');
+                            element.addClass('liked')
                         } else {
                             element.removeClass('active');
+                            element.removeClass('liked')
                         }
                         // 更新点赞数量
                         var liked_num = $(obj.getElementsByClassName('liked-num'));
                         liked_num.text(data['liked_num']);
+                        if (is_like) {
+                            liked_num.addClass('liked');
+                        } else {
+                            liked_num.removeClass('liked')
+                        }
+
                     } else {
                         if (data['code'] == 400) {
                             $('#login_modal').modal('show');
@@ -369,5 +466,65 @@
             config.disallowedContent = 'img{width,height}';
 
         };
+
+        /**
+         * usernmae : 用户名 默认为无
+         * size ：头像大小 默认为 30
+         * color ：字体颜色
+         * canvasId ：canvas容器的id
+         * */
+        function generatorAvator(username, size, bgcolor, canvasId, avatarContainerId) {
+            //设置头像昵称，如果为null或者为空时，设置为无
+            var nickname = username == null ? "无" : username == "" ? "无" : username;
+            //设置头像大小
+            var avatarSize = size == null ? 30 : size;
+
+            //设置头像内部文字大小
+            var fontSize = size == null ? 12 : avatarSize / 2;
+
+            //设置头像内部字体
+            var fontWeight = 'normal';
+
+            //设置头像背景颜色
+            var colors = [
+                "#31bc9f", "#33cc70", "#4a94db", "#9b5fb6", "#34495e", "#16a085", "#27ae60", "#2980b9", "#8e44ad", "#2c3e50",
+                "#f1cb1e", "#e6761b", "#e7363b", "#00bcd4", "#95a5a6", "#f39c12", "#d35400", "#c0392b", "#bdc3c7", "#7f8c8d"
+            ];
+            var avatarColor = bgcolor == null ? colors[Math.floor((Math.random() * colors.length))] : bgcolor == "" ? bgcolor : colors[Math.floor((Math.random() * colors.length))];
+
+            /*根据id获取canvas
+            * 如果为空，则创建新的canvas
+            * */
+            var canvas = document.getElementById(canvasId);
+
+            if (canvas) {
+                canvas.remove();
+            } else {
+                var newcanvas = "<canvas id='" + canvasId + "' style='display:none'></canvas>";
+                document.getElementsByName("body").append(newcanvas);
+                canvas = document.getElementById(canvasId);
+            }
+
+            //初始化canvas设置
+            canvas.width = avatarSize;
+            canvas.height = avatarSize;
+            var context = canvas.getContext('2d');
+
+            //头像背景颜色设置
+            context.fillStyle = avatarColor;
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            //头像字体颜色设置
+            context.fillStyle = '#FFFFFF';
+            context.font = fontWeight + ' ' + fontSize + 'px sans-serif';
+            context.textAlign = 'center';
+            context.textBaseline = "middle";
+            console.log(avatarSize / 2 - fontSize / 2);
+            console.log(avatarSize / 2);
+
+            context.fillText(nickname.charAt(0), fontSize, fontSize);
+            document.getElementById(avatarContainerId).src = canvas.toDataURL("image/png");
+        }
+
     </script>
 {% endblock %}

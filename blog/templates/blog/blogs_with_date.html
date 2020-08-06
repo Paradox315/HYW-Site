@@ -2,7 +2,8 @@
 {% block title %}{{ blog_type.type_name }}{% endblock %}
 
 {% block blog_list_title %}
-    <span >日期归档：</span>
-    <span >{{ blogs_with_date }}</span>
-    <a href="{% url 'blog_list' %}">查看全部博客</a>
+    <a class="pull-right" style="color: #f9f9f9;font-weight: bold;font-size: large" href="{% url 'blog_list' %}"><span
+            class="glyphicon glyphicon-arrow-left"></span></a>&nbsp;&nbsp;
+    <span style="color: #f9f9f9;font-weight: bold;font-size: large"><span class="glyphicon glyphicon-time"></span>  日期归档: </span>
+    <span style="color: #f9f9f9;font-size: medium">{{ blogs_with_date }}</span>
 {% endblock %}

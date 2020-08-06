@@ -45,22 +45,27 @@
         }
 
         .tit {
-            margin-top: 0;
-            margin-bottom: 20px;
             font-weight: 700;
-            color: #222222;
             letter-spacing: 8px;
+            transition: all 2s;
+            padding: 15px;
+            color: #222222;
+            text-shadow: 3px 3px 5px #ced0d6;
         }
-        .tit:hover{
-            color: #000000;
-            font-weight: 1000;
+
+        .tit:hover {
+            color: #1d971d;
+            transform: scale(1.03);
+            text-decoration: none;
         }
+
         .excerpt .note {
             color: #777;
-            line-height: 24px;
+            line-height: 35px;
             font-weight: 100;
-            font-size: medium;
+            font-size: 1.25vw;
             margin-bottom: 60px;
+            text-indent: 1.5em;
             word-break: break-all;
         }
 
@@ -77,6 +82,10 @@
 
         #cover:hover {
             transform: scale(1.05);
+        }
+
+        a:hover {
+            text-decoration: none
         }
     </style>
 {% endblock %}
@@ -96,10 +105,11 @@
                     <div class="panel-body">
                         {% for blog in blogs %}
                             <div class="panel_bg excerpt">
-                                <h2 ><a class="list-group-item media-heading tit"
-                                        href="{% url 'blog_detail' blog.pk %}"
-                                        target="_blank">{{ blog.title }}</a>
+                                <h2><a class="media-heading tit"
+                                       href="{% url 'blog_detail' blog.pk %}"
+                                       target="_blank">{{ blog.title }}</a>
                                 </h2>
+                                <hr>
                                 <div class="clearfix">
                                     <a href="{% url 'blog_detail' blog.pk %}">
                                         <img class="pull-left img-fluid img-thumbnail" id="cover"
@@ -107,11 +117,12 @@
                                              src="{{ blog.photo_cover_url }}" alt="封面">
                                     </a>
                                     <div style="float:right;width: 58%">
-                                        <p class="note">{{ blog.content|safe|striptags|truncatechars:200 }}</p>
+                                        <p class="note">{{ blog.content|safe|striptags|truncatechars:150 }}...</p>
                                         <p class="tag">
-                                            <span class="glyphicon glyphicon-tag"></span>
-                                            <a href="{% url 'blogs_with_type' blog.blog_type.pk %}">{{ blog.blog_type }}</a>&nbsp;&nbsp;
-                                            <span class="glyphicon glyphicon-time"></span> {{ blog.created_time|date:"Y-m-d" }}&nbsp;&nbsp;
+                                            <span class="glyphicon glyphicon-tag"></span> 分类：
+                                            <a class="label label-success" style="font-size: 13px"
+                                               href="{% url 'blogs_with_type' blog.blog_type.pk %}">{{ blog.blog_type }}</a>&nbsp;&nbsp;
+                                            <span class="glyphicon glyphicon-time"></span> {{ blog.created_time|date:"Y年m月d日" }}&nbsp;&nbsp;
                                             <span class="glyphicon glyphicon-eye-open"></span>
                                             阅读({{ blog.get_read_num }})&nbsp;&nbsp;
                                             <span class="glyphicon glyphicon-comment"></span>
