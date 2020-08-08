@@ -44,7 +44,7 @@ def avatar_generate(txt, color, size, css_class='sa-avatar', ecls=None):
         'width': '%spx' % size,
         'height': '%spx' % size,
         'line-height': '%spx' % size,
-        'font-size': '%spx' % (size-10),
+        'font-size': '%spx' % (size-15),
         'background-color': color,
     }
 

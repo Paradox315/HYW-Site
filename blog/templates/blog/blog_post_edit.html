@@ -14,7 +14,7 @@
             border-radius: 25px;
             padding: 5%;
             margin-bottom: 60px;
-            margin-top: 20px;
+            margin-top: 60px;
             background: #f9f9f9;
             box-shadow:  20px 20px 15px #b6c6d0,
              -10px -10px 15px #c8f5df;
@@ -27,15 +27,15 @@
         <div class="col-xs-10 col-xs-offset-1">
             <div class="panel panel_bg">
                 <div class="panel-heading">
-                    <h3><span>添加博客</span></h3>
+                    <h1><span>添加博客</span></h1>
                 </div>
                 <hr>
                 <div class="panel-body">
                     {% if user.is_authenticated %}
                         <form method="POST" class="post-form" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {{ form.cover }}
-                            <h3><span>文章标题</span></h3>
+                            <div>{{ form.cover }}</div>
+                            <h4><span>文章标题</span></h4>
                             <p>{{ form.title }}</p>
                             <h4><span>文章类型</span> </h4>
                             <p> {{ form.content_type }}</p>

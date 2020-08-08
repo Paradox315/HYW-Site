@@ -28,11 +28,17 @@ class BlogType(models.Model):
 class Blog(models.Model, ReadNumExpandMethod):
     title = models.CharField(max_length=50)
     blog_img = models.ImageField(blank=True, null=True, upload_to=user_directory_path)
-    blog_cover =ImageSpecField( # 注意：ImageSpecField 不会生成数据库表的字段
-        source = 'blog_img',
-        processors = [ResizeToFill(300, 200)],  # 处理成一寸照片的大小
-        format = 'JPEG',  # 处理后的图片格式
-        options = {'quality': 85}  # 处理后的图片质量
+    blog_cover = ImageSpecField(  # 注意：ImageSpecField 不会生成数据库表的字段
+        source='blog_img',
+        processors=[ResizeToFill(300, 200)],  # 处理成一寸照片的大小
+        format='JPEG',  # 处理后的图片格式
+        options={'quality': 85}  # 处理后的图片质量
+    )
+    blog_show = ImageSpecField(  # 注意：ImageSpecField 不会生成数据库表的字段
+        source='blog_img',
+        processors=[ResizeToFill(1280, 800)],
+        format='JPEG',  # 处理后的图片格式
+        options={'quality': 85}  # 处理后的图片质量
     )
     blog_type = models.ForeignKey(BlogType, on_delete=models.DO_NOTHING)
     content = RichTextUploadingField()
@@ -56,5 +62,12 @@ class Blog(models.Model, ReadNumExpandMethod):
             return self.blog_cover.url
         else:
             return '/media/default/cover.jpg'
+
+    def photo_show_url(self):
+        if self.blog_show and hasattr(self.blog_show, 'url'):
+            return self.blog_show.url
+        else:
+            return '/media/default/cover.jpg'
+
     class Meta:
         ordering = ['-created_time']
