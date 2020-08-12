@@ -8,10 +8,12 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="shortcut icon" href="/static/img/icon1.png" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'bootstrap-3.3.7/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="/static/assets/css/style.css"/>
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link href="/static/fontawesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="/static/dashboard.css" rel="stylesheet">
+    <!-- styles -->
     <script type="text/javascript" src="{% static 'jquery-1.12.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
     {% block header_extends %}{% endblock %}
@@ -20,7 +22,8 @@
     html, body {
         width: 100%;
         height: 100%;
-        font-family: consolas;
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
     }
 
     /*非常重要的样式让背景图片100%适应整个屏幕*/
@@ -32,17 +35,15 @@
 
     .my-navbar a {
         background: transparent !important;
-        color: #fff !important
+        transition: color 0.5s ease-in-out;
+        color: white;
     }
 
     .my-navbar a:hover {
         opacity: .8;
         background: transparent;
-        outline: 0
-    }
-
-    .my-navbar a {
-        transition: color 0.5s ease-in-out;
+        outline: 0;
+        color: #a8c9f8;
     }
 
     /*-webkit-transition ;-moz-transition*/
@@ -76,74 +77,89 @@
         -webkit-user-select: none;
         font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "Wenquanyi Micro Hei", sans-serif;
     }
+    .dropdown-menu li a
+    {
+        color: white;
+        padding: 10px;
+        font-size: small;
+        text-align: center;
+    }
+    .dropdown-menu li{
+        transition: ease-out 1s;
+        background: #40bf60;
+    }
+    .dropdown-menu li:hover{
+        transform: scale(1.2);
+        border: 1px solid rgba(255,255,255,0.5);
+    }
 </style>
-<body>
-<div class="navbar navbar-fixed-top my-navbar" role="navigation" style="background: #4cae4c">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'home' %}" style="font-size: x-large;margin-top:15px;">
-                <div class="icon">
-                    <span style="padding:15px;font-size: x-large">HYW Site</span>
-                </div>
-            </a>
-            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div id="navbar-collapse" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav" style="margin-top: 15px">
-                <li class="{% block nav_home_active %}{% endblock %}">
-                    <a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> 首页</a>
-                </li>
-                <li class="{% block nav_blog_active %}{% endblock %}">
-                    <a href="{% url 'blog_list' %}"><span class="glyphicon glyphicon-list-alt"></span> 咨询</a>
-                </li>
-                {% if user.is_staff or user.is_superuser %}
-                    <li class="{% block nav_article_active %}{% endblock %}">
-                        <a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span> 新建</a>
+<header>
+    <div id="banner" class="navbar navbar-fixed-top my-navbar " role="navigation"
+         style="backdrop-filter: blur(10px);background: #40bf60">
+        <div class="container-fluid">
+            <div class="navbar-header" style="font-size: x-large;margin-top:32px;">
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}" >
+                    <span style="padding:15px;font-size: xx-large">HYW Site</span>
+                </a>
+            </div>
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" style="margin-top: 15px">
+                    <li class="{% block nav_home_active %}{% endblock %}">
+                        <a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> 首页</a>
                     </li>
-                {% endif %}
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                {% if not user.is_authenticated %}
-                    <li style="margin-top: 15px">
-                        <a href="{% url 'login' %}?from={{ request.get_full_path }}">
-                            <span class="glyphicon glyphicon-log-in"></span> 登录
-                        </a>
+                    <li class="{% block nav_blog_active %}{% endblock %}">
+                        <a href="{% url 'blog_list' %}"><span class="glyphicon glyphicon-list-alt"></span> 咨询</a>
                     </li>
-                    <li style="margin-top: 15px">
-                        <a href="{% url 'register' %}?from={{ request.get_full_path }}">
-                            <span class="glyphicon glyphicon-user"></span> 注册
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            {{ user.get_avatar|safe }}
-                            {% if user.has_nickname %}
-                                <span style="font-size: medium">{{ user.get_nickname }}</span>
-                            {% else %}
-                                <span style="font-size: medium">{{ user.username }}</span>
-                            {% endif %}
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" style="background: #1d971d">
-                            <li class="dropdown-toggle"><a href="{% url 'user_info' %}">个人资料</a></li>
-                            <li><a href="{% url 'change_password' %}">修改密码</a></li>
-                            {% if user.is_staff or user.is_superuser %}
-                                <li><a href="{% url 'admin:index' %}">后台管理</a></li>
-                            {% endif %}
-                            <li><a href="{% url 'logout' %}?from={{ request.get_full_path }}">退出</a></li>
-                        </ul>
-                    </li>
-                {% endif %}
-            </ul>
+                    {% if user.is_staff or user.is_superuser %}
+                        <li class="{% block nav_article_active %}{% endblock %}">
+                            <a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span> 新建</a>
+                        </li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if not user.is_authenticated %}
+                        <li style="margin-top: 15px">
+                            <a href="{% url 'login' %}?from={{ request.get_full_path }}">
+                                <span class="glyphicon glyphicon-log-in"></span> 登录
+                            </a>
+                        </li>
+                        <li style="margin-top: 15px">
+                            <a href="{% url 'register' %}?from={{ request.get_full_path }}">
+                                <span class="glyphicon glyphicon-user"></span> 注册
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                {{ user.get_avatar|safe }}
+                                {% if user.has_nickname %}
+                                    <span style="font-size: medium">{{ user.get_nickname }}</span>
+                                {% else %}
+                                    <span style="font-size: medium">{{ user.username }}</span>
+                                {% endif %}
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" style="background:#40BF60 ">
+                                <li><a href="{% url 'user_info' %}">个人资料</a></li>
+                                <li><a href="{% url 'change_password' %}">修改密码</a></li>
+                                {% if user.is_staff or user.is_superuser %}
+                                    <li><a href="{% url 'admin:index' %}">后台管理</a></li>
+                                {% endif %}
+                                <li><a href="{% url 'logout' %}?from={{ request.get_full_path }}">退出</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-
+</header>
+<body>
 {% block content %}{% endblock %}
 <!-- Modal -->
 <div class="modal fade" id="login_modal" tabindex="-1" role="dialog">
@@ -193,13 +209,18 @@
         footerPosition();
         $(window).resize(footerPosition);
     });
-    $(window).scroll(function () {
+    /*$(window).scroll(function () {
         if ($(".navbar").offset().top > 50) {
             $(".navbar-fixed-top").addClass("top-nav");
+            $("#banner").css({opacity: 1});
+            $("#banner").css("background", "#50e38d");
+            $(".my-navbar").find("a").css("color", "#fff");
         } else {
             $(".navbar-fixed-top").removeClass("top-nav");
+            $("#banner").css("background", "none");
+            $(".my-navbar").find("a").css("color", "#000");
         }
-    });
+    });*/
     $("#login_medal_form").submit(function (event) {
         event.preventDefault();
         $.ajax({
@@ -217,6 +238,5 @@
         });
     });
 </script>
-
-
+{% block script_extends %}{% endblock %}
 </html>

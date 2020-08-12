@@ -3,7 +3,8 @@
     padding: 0;
 }
 body {
-    margin-top: 70px!important;
+    margin-top: 70px;
+    padding-top: 70px;
 }
 ul {
     list-style-type: none!important;
