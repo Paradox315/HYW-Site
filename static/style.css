@@ -2,6 +2,28 @@ body {
     justify-content: center;
     align-items: center;
 }
+.show-box {
+   height: 400px;
+   position: relative;
+   perspective: 1px;
+   transform-style: preserve-3d;
+   overflow: auto;
+   overflow-x: hidden;
+ }
+
+ .curtain {
+   transform: translate3d(0, 0, -1px) scale(2);
+   vertical-align: middle;
+ }
+
+ .comehere {
+   background: url("https://img-blog.csdn.net/20160714114130582") center center/contain;
+   height: 150px;
+   width: 150px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+ }
 
 .container {
     width: 1600px;
@@ -97,4 +119,114 @@ body {
 .container .card .face.face2 .content a:hover {
     background: #333;
     color: #fff;
+}
+.gallery{
+    display: flex;
+    background: #222;
+}
+.gallery img{
+    max-width: 200px;
+}
+
+.container-pic{
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-flow: dense;
+    grid-gap: 10px;
+    margin: 40px;
+}
+.container-pic .box{
+    background: #333;
+    padding: 20px;
+    display: grid;
+    font-size: 20px;
+    place-items: center;
+    text-align: center;
+    color: white;
+    transition: 0.5s;
+}
+.container-pic .box:hover{
+    background: #5cb85c;
+}
+.container-pic .box img{
+    position: relative;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.container-pic .box:nth-child(1){
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.container-pic .box:nth-child(2){
+    grid-column: span 1;
+    grid-row: span 2;
+}
+.container-pic .box:nth-child(4){
+    grid-column: span 1;
+    grid-row: span 2;
+}
+.container-pic .box:nth-child(5){
+    grid-column: span 3;
+    grid-row: span 2;
+}
+.contact-info{
+    position: fixed;
+    top: 40%;
+    z-index: 99999;
+    right: 0px;
+    box-shadow: 0px 0px 20px 2px #c6c8cf;
+    transition: 0.5s;
+}
+.option{
+    cursor: pointer;
+    position: relative;
+}
+.option a{
+    color: #40bf83;
+    font-size: small;
+}
+.option i{
+    display: block;
+    width: 60px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    background: #f0f6f8;
+    font-size: 20px;
+    transition: 0.6s;
+}
+.option:hover i{
+    color: #79d293;
+}
+.option:hover a{
+    text-decoration: none;
+}
+.text{
+    position: absolute;
+    height: 60px;
+    width: 200px;
+    background: #1b1b1b;
+    top: 0;
+    z-index: -1;
+    right: -140px;
+    color: white;
+    line-height: 60px;
+    text-align: center;
+    transition: 0.6s;
+}
+.option:hover .text{
+    right: 60px;
+}
+@media (max-width: 991px) {
+    .container-pic{
+        grid-template-columns: repeat(auto-fill,minmax(50%,1fr));
+        grid-template-rows: minmax(auto,auto);
+    }
+    .container-pic .box{
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
 }

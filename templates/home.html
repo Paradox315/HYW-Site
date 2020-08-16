@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    我的网站|首页
+    清亮春|首页
 {% endblock %}
 
 {% block header_extends %}
@@ -18,6 +18,10 @@
     <script src="/static/assets/js/modernizr.custom.js"></script>
     <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
     <style>
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             padding-top: 0;
             margin-top: 0;
@@ -87,89 +91,86 @@
                 </div>
             </div>
         </div>
-
-                <div style="display: flex">
-                    <div class="container">
-                        <div class="card">
-                            <div class="face face1">
-                                <div class="content">
-                                    <img class="pic" src="/static/img/info1.png" alt="春">
-                                    <h3 class="title">春</h3>
-                                </div>
-                            </div>
-                            <div class="face face2">
-                                <div class="content">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor
-                                        incididunt ut
-                                        labore et dolore magna aliqua.
-                                    </p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
+        <div style="display: flex">
+            <div class="container">
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img class="pic" src="/static/img/info1.png" alt="春">
+                            <h3 class="title">春</h3>
                         </div>
-                        <div class="card">
-                            <div class="face face1">
-                                <div class="content">
-                                    <img class="pic" src="/static/img/info2.png" alt="夏">
-                                    <h3 class="title">夏</h3>
-                                </div>
-                            </div>
-                            <div class="face face2">
-                                <div class="content">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor
-                                        incididunt ut
-                                        labore et dolore magna aliqua.
-                                    </p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="face face1">
-                                <div class="content">
-                                    <img class="pic" src="/static/img/info3.png" alt="秋">
-                                    <h3 class="title">夏</h3>
-                                </div>
-                            </div>
-                            <div class="face face2">
-                                <div class="content">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor
-                                        incididunt ut
-                                        labore et dolore magna aliqua.
-                                    </p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="face face1">
-                                <div class="content">
-                                    <img class="pic" src="/static/img/info4.png" alt="冬">
-                                    <h3 class="title">冬</h3>
-                                </div>
-                            </div>
-                            <div class="face face2">
-                                <div class="content">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor
-                                        incididunt ut
-                                        labore et dolore magna aliqua.
-                                    </p>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor
+                                incididunt ut
+                                labore et dolore magna aliqua.
+                            </p>
+                            <a href="#">Read More</a>
                         </div>
                     </div>
                 </div>
-
-
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img class="pic" src="/static/img/info2.png" alt="夏">
+                            <h3 class="title">夏</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor
+                                incididunt ut
+                                labore et dolore magna aliqua.
+                            </p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img class="pic" src="/static/img/info3.png" alt="秋">
+                            <h3 class="title">夏</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor
+                                incididunt ut
+                                labore et dolore magna aliqua.
+                            </p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img class="pic" src="/static/img/info4.png" alt="冬">
+                            <h3 class="title">冬</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor
+                                incididunt ut
+                                labore et dolore magna aliqua.
+                            </p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- end about -->
     <!-- section works -->
@@ -191,39 +192,43 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     {% if hot_blogs_for_7_days %}
-                        <div id="myCarousel" class="carousel slide" style="margin: 60px 30px">
+                        <div id="myCarousel" class="carousel slide" style="margin-bottom: 60px">
                             <!-- 轮播（Carousel）指标 -->
                             <ol class="carousel-indicators">
                                 {% for hot_blog in hot_blogs_for_7_days %}
-                                    {% ifequal forloop.counter0 0 %}
-                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                    {% else %}
-                                        <li data-target="#myCarousel" data-slide-to={{ forloop.counter0 }}></li>
-                                    {% endifequal %}
+                                    {% if forloop.counter0 < 5 %}
+                                        {% ifequal forloop.counter0 0 %}
+                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                        {% else %}
+                                            <li data-target="#myCarousel" data-slide-to={{ forloop.counter0 }}></li>
+                                        {% endifequal %}
+                                    {% endif %}
                                 {% endfor %}
                             </ol>
                             <!-- 轮播（Carousel）项目 -->
                             <div class="carousel-inner">
                                 {% for hot_blog in hot_blogs_for_7_days %}
-                                    {% ifequal forloop.counter 1 %}
-                                        <div class="item active">
-                                            <a href="{% url 'blog_detail' hot_blog.pk %}" target="_blank">
+                                    {% if forloop.counter0 < 5 %}
+                                        {% ifequal forloop.counter0 0 %}
+                                            <div class="item active">
+                                                <a href="{% url 'blog_detail' hot_blog.pk %}" target="_blank">
+                                                    <img src="{{ hot_blog.photo_show_url }}" alt="{{ hot_blog.title }}">
+                                                </a>
+                                                <div class="carousel-caption">
+                                                    <h1>{{ hot_blog.title }}</h1>
+                                                    <p>{{ hot_blog.created_time|date:"Y-m-d" }}</p>
+                                                </div>
+                                            </div>
+                                        {% else %}
+                                            <div class="item">
                                                 <img src="{{ hot_blog.photo_show_url }}" alt="{{ hot_blog.title }}">
-                                            </a>
-                                            <div class="carousel-caption">
-                                                <h1>{{ hot_blog.title }}</h1>
-                                                <p>{{ hot_blog.created_time|date:"Y-m-d" }}</p>
+                                                <div class="carousel-caption">
+                                                    <h1>{{ hot_blog.title }}</h1>
+                                                    <p>{{ hot_blog.created_time|date:"Y-m-d" }}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    {% else %}
-                                        <div class="item">
-                                            <img src="{{ hot_blog.photo_show_url }}" alt="{{ hot_blog.title }}">
-                                            <div class="carousel-caption">
-                                                <h1>{{ hot_blog.title }}</h1>
-                                                <p>{{ hot_blog.created_time|date:"Y-m-d" }}</p>
-                                            </div>
-                                        </div>
-                                    {% endifequal %}
+                                        {% endifequal %}
+                                    {% endif %}
                                 {% endfor %}
                             </div>
                             <!-- 轮播（Carousel）导航 -->
@@ -236,12 +241,79 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
+                    {% else %}
+                        <div class="sub-heading">
+                            <p>本周暂时没有热门咨询</p>
+                        </div>
                     {% endif %}
+
+                    <div class="gallery">
+                        <div class="container-pic">
+                            <div class="box">
+                                <img src="/static/img/news.png" alt="1">
+                                <p>本月热门咨询</p>
+                            </div>
+                            {% if hot_blogs_for_month %}
+                                {% for hot_blog in hot_blogs_for_month %}
+                                    {% if forloop.counter0 < 6 %}
+                                        <div class="box">
+                                            <a href="{% url 'blog_detail' hot_blog.pk %}" target="_blank">
+                                                <img style="width: 200px;height: 150px"
+                                                     src="{{ hot_blog.photo_cover_url }}"
+                                                     alt="{{ hot_blog.title }}">
+                                            </a>
+
+                                            <p>{{ hot_blog.content|safe|striptags|truncatechars:20 }}...</p>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- end works -->
+    <section id="contact">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="heading">
+                    <h3><span>Contact form</span></h3>
+                </div>
+                <div class="sub-heading">
+                    <p>
+                        Want to work with us or just want to say hello? Don't hesitate to get in touch!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="navigate-bar" class="contact-info">
+        <div class="option">
+            <a href="#"><i class="fa fa-angle-up"></i></a>
+            <div class="text">回到顶部</div>
+        </div>
+        <div class="option">
+            <a href="#about"><i class="fa fa-address-book"></i></a>
+            <div class="text">关于我们</div>
+        </div>
+        <div class="option">
+            <a href="#works"><i class="fa fa-bar-chart"></i></a>
+            <div class="text">热门咨询</div>
+        </div>
+        <div class="option">
+            <a href="#contact"><i class="fa fa-envelope-open"></i></a>
+            <div class="text">联系我们</div>
+        </div>
+        <div class="option">
+            <a href="#contact"><i class="fa fa-qrcode"></i></a>
+            <div class="text">
+                关注公众号
+            </div>
+        </div>
+
+    </div>
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
             <div class="panel panel_bg">
@@ -253,25 +325,6 @@
                     <div id="container"></div>
                     <br>
                 {% endif %}
-
-                <div class="panel panel-success" style="box-shadow:  5px 5px 9px #b6c6d0,
-             -5px -5px 9px #c8f5df;border: none;margin-bottom: 40px">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">今日热门资讯</h3>
-                    </div>
-                    <ul>
-                        {% for hot_data in today_hot_data %}
-                            <li>
-                                <a class="list-group-item"
-                                   href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}
-                                    <span class="badge"
-                                          style="float: none;margin-left: 10px">{{ hot_data.read_num }}</span></a>
-                            </li>
-                        {% empty %}
-                            <li class="list-group-item">今天暂时没有热门咨询</li>
-                        {% endfor %}
-                    </ul>
-                </div>
                 <div class="panel panel-success" style="box-shadow:  5px 5px 9px #b6c6d0,
              -5px -5px 9px #c8f5df;border: none;margin-bottom: 40px">
                     <div class="panel-heading">
@@ -347,6 +400,7 @@
     </script>
     <!-- javascript -->
     <script src="/static/assets/js/slippry.min.js"></script>
+    <script src="/static/assets/js/custom.js"></script>
     <script>
         $(document).ready(function () {
             $('#slippry-slider').slippry(
@@ -363,11 +417,11 @@
             )
         });
     </script>
-    <script src="/static/assets/js/custom.js"></script>
     <script type="text/javascript">
         $('#banner').css('background', 'none');
         $('.dropdown-menu').css('background', 'none');
         $(".dropdown-menu").find("li").css("background", "none");
+        $('#navigate-bar').css('display', 'none');
         $(window).scroll(function () {
             if ($(".navbar").offset().top > 50) {
                 $(".navbar-fixed-top").addClass("top-nav");
@@ -385,5 +439,14 @@
                 //$(".my-navbar").find("a").css("color", "#fff");
             }
         });
+    </script>
+    <script type="text/javascript">
+        window.onscroll = function () {
+            if (document.body.scrollTop > 745 || document.documentElement.scrollTop > 745) {
+                document.getElementById("navigate-bar").style.display = "block";
+            } else {
+                document.getElementById("navigate-bar").style.display = "none";
+            }
+        }
     </script>
 {% endblock %}

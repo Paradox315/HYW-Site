@@ -29,6 +29,7 @@ urlpatterns = [
                   path('comment/', include('comment.urls')),
                   path('likes/', include('likes.urls')),
                   path('user/', include('user.urls')),
+                  path('search/', views.search, name="search"),
                   url(r'^add_type/$', views.add_type, name='add_type'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # 没有这一句无法显示

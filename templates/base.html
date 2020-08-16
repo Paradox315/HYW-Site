@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="shortcut icon" href="/static/img/icon1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/img/tea.png" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'bootstrap-3.3.7/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="/static/assets/css/style.css"/>
     <link rel="stylesheet" href="{% static 'base.css' %}">
     <link href="/static/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2009174_7tffnl47ur7.css">
     <!-- Custom styles for this template -->
     <link href="/static/dashboard.css" rel="stylesheet">
     <!-- styles -->
@@ -77,38 +78,74 @@
         -webkit-user-select: none;
         font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "Wenquanyi Micro Hei", sans-serif;
     }
-    .dropdown-menu li a
-    {
+
+    .dropdown-menu li a {
         color: white;
         padding: 10px;
         font-size: small;
         text-align: center;
     }
-    .dropdown-menu li{
+
+    .dropdown-menu li {
         transition: ease-out 1s;
         background: #40bf60;
     }
-    .dropdown-menu li:hover{
+
+    .dropdown-menu li:hover {
         transform: scale(1.2);
-        border: 1px solid rgba(255,255,255,0.5);
+        border: 2px double rgba(255, 255, 255, 0.5);
+    }
+
+    #search-txt {
+        border-radius: 40px 0px 0px 40px;
+        border: none;
+        height: 40px;
+        transition: 0.3s;
+    }
+
+    #search-txt:focus {
+        border: 2px #589af4 solid;
+    }
+
+    .search-btn {
+        color: white;
+        height: 40px;
+        border-radius: 0px 40px 40px 0px;
+        background: #589af4;
+        border: none;
+        transition: 0.5s;
+        margin-left: -3px;
+    }
+
+    .web-font {
+        font-family: "webfont" !important;
+        font-size: xx-large;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 </style>
 <header>
     <div id="banner" class="navbar navbar-fixed-top my-navbar " role="navigation"
          style="backdrop-filter: blur(10px);background: #40bf60">
         <div class="container-fluid">
-            <div class="navbar-header" style="font-size: x-large;margin-top:32px;">
+            <div class="navbar-header" style="font-size: x-large;padding: 25px 10px">
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'home' %}" >
-                    <span style="padding:15px;font-size: xx-large">HYW Site</span>
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <span style="padding:15px">
+                        <i class="web-font">
+                            <i style="font-size: xx-large" class="iconfont icon-Tea-Mug"></i>
+                            <span style="font-weight: 100">清亮春</span>
+                        </i>
+                    </span>
                 </a>
             </div>
             <div id="navbar-collapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav" style="margin-top: 15px">
+                <ul class="nav navbar-nav" style="margin-top: 5px">
                     <li class="{% block nav_home_active %}{% endblock %}">
                         <a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> 首页</a>
                     </li>
@@ -122,19 +159,29 @@
                     {% endif %}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li style="margin-top: 12.5px">
+                        <form class="navbar-form search-form" action="{% url 'search' %}">
+                            <div class="form-group">
+                                <input type="text" id="search-txt" name="wd" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default search-btn">
+                                &nbsp;<i class="glyphicon glyphicon-search"></i>&nbsp;
+                            </button>
+                        </form>
+                    </li>
                     {% if not user.is_authenticated %}
-                        <li style="margin-top: 15px">
+                        <li style="margin-top: 5px">
                             <a href="{% url 'login' %}?from={{ request.get_full_path }}">
                                 <span class="glyphicon glyphicon-log-in"></span> 登录
                             </a>
                         </li>
-                        <li style="margin-top: 15px">
+                        <li style="margin-top: 5px">
                             <a href="{% url 'register' %}?from={{ request.get_full_path }}">
                                 <span class="glyphicon glyphicon-user"></span> 注册
                             </a>
                         </li>
                     {% else %}
-                        <li class="dropdown">
+                        <li class="dropdown" style="margin-top: -10px">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                                 {{ user.get_avatar|safe }}
                                 {% if user.has_nickname %}

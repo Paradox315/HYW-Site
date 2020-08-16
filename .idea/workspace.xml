@@ -2,77 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="445618fa-02b3-4c82-bc84-57717da5bd4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/CACHE/images/图文咨询/root_测试5/06a409a5e1580337c62e7bcf7135d44e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/color/default.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/custom-fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/fancybox/blank.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/fancybox/fancybox_loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/fancybox/fancybox_overlay.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/fancybox/fancybox_sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/fancybox/jquery.fancybox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/overwrite.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/prettyPhoto.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/slippry.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/customicon/Icons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/customicon/Icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/customicon/Icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/customicon/Icons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/fontawesome/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/fontawesome/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/fontawesome/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/fontawesome/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/fontawesome/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/glyphicons-halflings-regular.eot@" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/arrows.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/cursor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/glyphicons-halflings-white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/glyphicons-halflings.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/sy-loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/AnimOnScroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/animate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/classie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/imagesloaded.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery-1.9.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery.easing.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery.fancybox-media.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery.fancybox.pack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery.nav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery.nicescroll.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery.scrollTo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/masonry.pkgd.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/modernizr.custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/nagging-menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/slippry.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/info4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/slide1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/slide2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/slide3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/CACHE/images/图文咨询/root_测试6/5cb8133590af6f085491ab2153926502.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/CACHE/images/图文咨询/root_测试7/36db41c88b74269a625be2419b130e84.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/CACHE/images/图文咨询/root_测试7/83a8c6e532451ad1836e6e13c275fec4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/图文咨询/root_测试6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/图文咨询/root_测试7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font/webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font/webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font/webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font/webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/font/webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/news.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/qrcode.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/tea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mysite/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/read_statistics/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_statistics/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/color/default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/cursor.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/bootstrap-3.3.7/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/info1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/info1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/info2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/info2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/info3.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/info3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/html2canvas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/icon1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -135,9 +96,10 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/font" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -150,11 +112,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Files\Python_file\HYW-Site\static\font" />
+      <recent name="E:\Files\Python_file\HYW-Site\static\fonts" />
       <recent name="E:\Files\Python_file\HYW-Site\static\img" />
-      <recent name="E:\Files\Python_file\HYW-Site\static\assets" />
-      <recent name="E:\Files\Python_file\HYW-Site\static" />
-      <recent name="E:\Files\Python_file\HYW-Site\user" />
-      <recent name="E:\Files\Python_file\Mysite\static\img" />
+      <recent name="E:\Files\Python_file\HYW-Site\templates" />
+      <recent name="E:\Files\Python_file\HYW-Site" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Files\Python_file\Mysite\static" />
@@ -430,7 +392,27 @@
       <workItem from="1597145577511" duration="238000" />
       <workItem from="1597156559030" duration="645000" />
       <workItem from="1597220173790" duration="6916000" />
-      <workItem from="1597241597311" duration="2641000" />
+      <workItem from="1597241597311" duration="4430000" />
+      <workItem from="1597246484743" duration="48000" />
+      <workItem from="1597283153775" duration="556000" />
+      <workItem from="1597302826096" duration="4763000" />
+      <workItem from="1597313321301" duration="5493000" />
+      <workItem from="1597394118822" duration="1440000" />
+      <workItem from="1597415349963" duration="2000" />
+      <workItem from="1597416215307" duration="3174000" />
+      <workItem from="1597419434013" duration="796000" />
+      <workItem from="1597452817236" duration="152000" />
+      <workItem from="1597478536390" duration="1397000" />
+      <workItem from="1597480103632" duration="998000" />
+      <workItem from="1597486576249" duration="858000" />
+      <workItem from="1597487731130" duration="1861000" />
+      <workItem from="1597499707949" duration="100000" />
+      <workItem from="1597500861180" duration="4873000" />
+      <workItem from="1597544165583" duration="5702000" />
+      <workItem from="1597556410489" duration="988000" />
+      <workItem from="1597557572054" duration="277000" />
+      <workItem from="1597558012225" duration="790000" />
+      <workItem from="1597560079328" duration="1794000" />
     </task>
     <task id="LOCAL-00001" summary="样式改变">
       <created>1595224464600</created>
@@ -502,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596899428064</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="1.0.1正式版">
+      <created>1597244483725</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1597244483725</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,18 +532,8 @@
     <MESSAGE value="1.0.3测试版，自动头像测试" />
     <MESSAGE value="1.0.3测试版，自动生成用户头像功能" />
     <MESSAGE value="1.0.0正式版" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0.0正式版" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Mysite/views.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="1.0.1正式版" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.0.1正式版" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Mysite$Test__blog.coverage" NAME="Test: blog Coverage Results" MODIFIED="1592746519844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
